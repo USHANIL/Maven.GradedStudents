@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
 public class ClassroomTest
 {
@@ -102,6 +103,31 @@ public class ClassroomTest
         System.out.println(classroom.studentToStringformat(preEnrollment));
         System.out.println("===========================");
         System.out.println(classroom.studentToStringformat(postEnrollment));
+    }
+
+    @Test
+    public void getGradeBook() {
+        // : Given
+        Double[] s1Score = { 70.0, 65.0, 50.0, 56.0};
+        Double[] s2Score = { 30.0, 25.0,55.0,67.0};
+        Double[] s3Score = { 100.0, 96.0, 100.0, 96.0};
+        Double[] s4Score = { 225.0, 123.0,55.0,58.0};
+        Double[] s5Score = { 80.0, 90.0,65.0,58.0};
+
+
+        Student s1 = new Student("Usha", "Kun", s1Score);
+        Student s2 = new Student("Anil", "Kunapareddy", s2Score);
+        Student s3 = new Student("Shree", "Kun", s3Score);
+        Student s4 = new Student("Anish", "Kunapa", s4Score);
+        Student s5 = new Student("gopi", "cheng", s5Score);
+
+        Student[] students = {s1, s2, s3, s4, s5};
+        Classroom classroom = new Classroom(students);
+
+        System.out.println("===========================");
+        Map preEnrollment = classroom.getGradeBook();
+        System.out.println("===========================");
 
     }
+
 }

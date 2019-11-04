@@ -110,9 +110,31 @@ public class Classroom
 
     public Map getGradeBook()
     {
-        Map<String, String> book = new TreeMap<String, String>();
+        Map<String, String> gradeBook = new TreeMap<String, String>();
 
-        return book;
+        for(int i = 0; i < students.length; i++){
+            if(students[i].getStudentAverageExamScore() >= 90){
+                gradeBook.put(students[i].firstName, "A");
+            }
+            else if(students[i].getStudentAverageExamScore() >= 80){
+                gradeBook.put(students[i].firstName, "B");
+            }
+            else if(students[i].getStudentAverageExamScore() >= 70){
+                gradeBook.put(students[i].firstName, "C");
+            }
+            else if(students[i].getStudentAverageExamScore() >= 60){
+                gradeBook.put(students[i].firstName, "D");
+            }
+            else{
+                gradeBook.put(students[i].firstName, "F");
+            }
+
+        }
+        for(Map.Entry g: gradeBook.entrySet()){
+            System.out.println(g);
+        }
+        return gradeBook;
+
     }
 
 
