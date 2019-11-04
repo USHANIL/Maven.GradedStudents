@@ -34,7 +34,7 @@ public class StudentTest {
     }
 
     @Test
-    public void getFirstName() {
+    public void testgetFirstName() {
         String expectedfirstName = "Leon";
         String lastName = "Hunter";
 
@@ -47,7 +47,7 @@ public class StudentTest {
     }
 
     @Test
-    public void setFirstName()
+    public void testsetFirstName()
     {
         String expectedfirstName = "Leon1";
 
@@ -62,7 +62,7 @@ public class StudentTest {
     }
 
     @Test
-    public void getLastName() {
+    public void testgetLastName() {
         String expectedfirstName = "Leon";
         String expectedlastName = "Hunterrrr";
         Student student = new Student(expectedfirstName, expectedlastName, null);
@@ -73,7 +73,7 @@ public class StudentTest {
     }
 
     @Test
-    public void setLastName() {
+    public void testsetLastName() {
 
         String expectedlastName = "Hunter1";
 
@@ -89,7 +89,7 @@ public class StudentTest {
     }
 
     @Test
-    public void getExamScores()
+    public void testgetExamScores()
     {
         // : Given
         String firstName = "Leon";
@@ -114,7 +114,7 @@ public class StudentTest {
     }
 
     @Test
-    public void getExamScores1()
+    public void testgetExamScores1()
     {
         // : Given
         String firstName = "Leon";
@@ -132,7 +132,7 @@ public class StudentTest {
 
     }
     @Test
-    public void getNumberExamsTaken() {
+    public void testgetNumberExamsTaken() {
         // : Given
         String firstName = "Leon";
         String lastName = "Hunter";
@@ -150,7 +150,7 @@ public class StudentTest {
 
 
     @Test
-    public void addExamScore() {
+    public void testaddExamScore() {
         String firstName = "Leon";
         String lastName = "Hunter";
         Double[] examScores = { 100.0, 95.0 };
@@ -172,7 +172,7 @@ public class StudentTest {
     }
 
     @Test
-    public void setExamScore() {
+    public void testsetExamScore() {
         String firstName = "Leon";
         String lastName = "Hunter";
         Double[] examScores = { 100.0, 95.0 };
@@ -194,20 +194,21 @@ public class StudentTest {
     }
 
     @Test
-    public void getAverageExamScore()
+    public void testgetStudentAverageExamScore()
     {
         // : Given
         String firstName = "Leon";
         String lastName = "Hunter";
         Double[] examScores = { 100.0, 95.0, 123.0, 96.0 };
+        Double expOutput = 103.5;
 
         Student student = new Student(firstName, lastName, examScores);
 
         // When
-        Double output = student.getAverageExamScore();
+        Double output = student.getStudentAverageExamScore();
 
         // Then
-     //   Assert.assertEquals(103.5, output);
+        Assert.assertEquals(expOutput, output);
 
     }
 }

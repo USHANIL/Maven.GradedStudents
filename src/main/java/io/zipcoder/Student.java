@@ -76,7 +76,7 @@ public class Student {
         }
 
     }
-    public Double getAverageExamScore()
+    public Double getStudentAverageExamScore()
     {
         Double sum = 0.0;
         if (this.examScores != null)
