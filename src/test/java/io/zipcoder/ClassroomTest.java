@@ -28,13 +28,6 @@ public class ClassroomTest
         String outString = classroom.studentToStringformat(classroom.getStudents());
         System.out.println(outString);
 
-        // Then
-//        for (int i=0; i<output.length; i++)
-//        {
-//            StringBuilder sb = new StringBuilder();
-//            sb.append(String.format("%s %s\n%s",output[i].firstName, output[i].lastName, output[i].getExamScores()));
-//            System.out.println(sb);
-//        }
     }
 
     @Test
@@ -82,4 +75,33 @@ public class ClassroomTest
     }
 
 
+    @Test
+    public void testgetStudentsByScore() {
+        // : Given
+        Double[] s1Score = { 100.0, 95.0, 123.0, 96.0};
+        Double[] s2Score = { 225.0, 25.0,55.0,67.0};
+        Double[] s3Score = { 100.0, 96.0, 100.0, 96.0};
+        Double[] s4Score = { 225.0, 123.0,55.0,58.0};
+
+
+        Student s1 = new Student("Usha", "Kun", s1Score);
+        Student s2 = new Student("Anil", "Kunapareddy", s2Score);
+        Student s3 = new Student("Shree", "Kun", s3Score);
+        Student s4 = new Student("Anish", "Kunapa", s4Score);
+
+        Student[] students = {s1, s2, s3, s4};
+        Classroom classroom = new Classroom(students);
+
+        // When
+        Student[] preEnrollment = classroom.getStudents();
+        Student[] postEnrollment = classroom.getStudentsByScore();
+
+        // Then
+
+        System.out.println("===========================");
+        System.out.println(classroom.studentToStringformat(preEnrollment));
+        System.out.println("===========================");
+        System.out.println(classroom.studentToStringformat(postEnrollment));
+
+    }
 }
